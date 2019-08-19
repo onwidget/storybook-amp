@@ -35,6 +35,9 @@ build/Release
 # Compiled directory
 dist/
 
+# Package lock file
+package-lock.json
+
 # Dependency directories
 node_modules/
 jspm_packages/
