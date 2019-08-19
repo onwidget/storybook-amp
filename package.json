@@ -1,0 +1,45 @@
+{
+  "name": "storybook-amp",
+  "version": "1.0.5",
+  "description": "Addon to render AMP html in Storybook",
+  "license": "MIT",
+  "keywords": [
+    "addon",
+    "amp",
+    "storybook"
+  ],
+  "homepage": "https://github.com/prototypearea/storybook-amp",
+  "bugs": {
+    "url": "https://github.com/prototypearea/storybook-amp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prototypearea/storybook-amp.git"
+  },
+  "files": [
+    "dist",
+    "register.js"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel ./src --ignore test -d ./dist/",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "@storybook/addons": "^5.0.0",
+    "@storybook/components": "^5.0.0",
+    "@storybook/core-events": "^5.0.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.4.4",
+    "@babel/core": "7.4.5",
+    "@babel/preset-env": "7.4.5",
+    "@babel/preset-react": "7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.3.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
