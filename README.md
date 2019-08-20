@@ -24,7 +24,7 @@ To SSR the code at runtime time use the `withAmpReactSsrDecorator` decorator ins
 
 ```js
 // config.js
-import { configure, addDecorator, addParameters, storiesOf } from '@storybook/react';
+import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withAmpReactSsrDecorator } from 'storybook-amp';
 
 const customStyles = ''; // some styles
