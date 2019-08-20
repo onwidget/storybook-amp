@@ -1,6 +1,6 @@
 {
   "name": "storybook-amp",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Addon to render AMP html in Storybook",
   "license": "MIT",
   "keywords": [
