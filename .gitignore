@@ -34,6 +34,7 @@ build/Release
 
 # Compiled directory
 dist/
+storybook-static/
 
 # Package lock file
 package-lock.json

@@ -19,9 +19,11 @@ const getAmpHTML = (story, data = {}, templateFunc = defaultAMPHtmlTemplate) => 
   let storyContent = ReactDOMServer.renderToStaticMarkup(story());
 
   /* FIXME: FIX due to storybook-readme */
-  storyContent = storyContent
-    .replace('<div class="storybook-readme-story">', '')
-    .replace(new RegExp('</div>$'), '')
+  if (storyContent.includes('<div class="storybook-readme-story">')) {
+    storyContent = storyContent
+      .replace('<div class="storybook-readme-story">', '')
+      .replace(new RegExp('</div>$'), '')
+  }
   /* ****************** */
 
   return templateFunc(innerProps).replace('<!-- STORY CODE -->', storyContent);

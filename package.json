@@ -23,23 +23,32 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "babel ./src --ignore test -d ./dist/",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "storybook": "start-storybook -c ./example/.storybook",
+    "build-storybook": "build-storybook -c ./example/.storybook"
   },
   "dependencies": {
-    "@storybook/addons": "^5.0.0",
-    "@storybook/components": "^5.0.0",
-    "@storybook/core-events": "^5.0.0",
+    "@storybook/addons": "^5.1.0",
+    "@storybook/components": "^5.1.0",
+    "@storybook/core-events": "^5.1.0",
     "react": "16.8.6",
     "react-dom": "16.8.6"
   },
   "devDependencies": {
     "@babel/cli": "7.4.4",
     "@babel/core": "7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.3.3",
     "@babel/preset-env": "7.4.5",
     "@babel/preset-react": "7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.3.3"
+    "@storybook/react": "^5.1.0",
+    "@storybook/addon-options": "^5.1.0",
+    "babel-loader": "^8.0.6"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "engines": {
+    "node": "10.15.0",
+    "npm": "6.4.1"
   }
 }
