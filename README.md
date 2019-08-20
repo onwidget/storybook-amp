@@ -1,6 +1,6 @@
 # Storybook AMP &middot; [![npm version](https://badge.fury.io/js/storybook-amp.svg)](https://www.npmjs.com/package/storybook-amp)
 
-Storybook addon that allows you to display [AMP HTML](https://amp.dev/) components generated with react for your stories
+Storybook addon that allows you to display [AMP HTML](https://amp.dev/) components generated with react in your stories
 
 ## Installation
 
