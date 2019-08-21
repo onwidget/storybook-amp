@@ -1,4 +1,4 @@
-# Storybook AMP &middot; [![npm package](https://img.shields.io/npm/v/storybook-amp?color=green&label=npm&style=flat-square)](https://www.npmjs.com/package/storybook-amp) ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/prototypearea/storybook-amp?style=flat-square)
+# Storybook AMP &middot; [![npm package](https://img.shields.io/npm/v/storybook-amp?color=green&label=npm&style=flat-square)](https://www.npmjs.com/package/storybook-amp)
 
 Storybook addon that allows you to display [AMP HTML](https://amp.dev/) components generated with react in your stories
 
