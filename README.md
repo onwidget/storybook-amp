@@ -18,6 +18,10 @@ Add following content to it:
 import 'storybook-amp/register';
 ```
 
+## Demo
+
+https://storybook-amp.netlify.com
+
 ## Usage
 
 To SSR the code at runtime time use the `withAmpReactSsrDecorator` decorator inside `config.js` or specific story.  To set custom settings, use the  `amp`  parameter. 
