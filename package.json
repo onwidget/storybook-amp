@@ -30,9 +30,7 @@
   "dependencies": {
     "@storybook/addons": "^5.1.0",
     "@storybook/components": "^5.1.0",
-    "@storybook/core-events": "^5.1.0",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3"
+    "@storybook/core-events": "^5.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
@@ -42,6 +40,10 @@
     "@babel/preset-react": "^7.0.0",
     "@storybook/react": "^5.1.0",
     "babel-loader": "^8.0.6"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
   },
   "publishConfig": {
     "access": "public"

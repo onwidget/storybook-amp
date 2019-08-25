@@ -3,8 +3,8 @@ import { makeDecorator } from '@storybook/addons';
 import { PARAM_KEY } from './constants'
 import decorator from './decorator'
 
-export const withAmpReactSsrDecorator = makeDecorator({
-  name: 'withAmpReactSsrDecorator',
+export const withAmpDecorator = makeDecorator({
+  name: 'withAmpDecorator',
   parameterName: PARAM_KEY,
   wrapper: (storyFn, context, { parameters }) => {
     

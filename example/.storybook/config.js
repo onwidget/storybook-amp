@@ -1,9 +1,9 @@
 import { configure, addDecorator, addParameters } from '@storybook/react';
-import { withAmpReactSsrDecorator } from '../../dist';
+import { withAmpDecorator } from '../../dist';
 
 const customStyles = ''; // some styles
 
-addDecorator(withAmpReactSsrDecorator)
+addDecorator(withAmpDecorator)
 
 addParameters({
   amp: {
