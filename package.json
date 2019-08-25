@@ -1,12 +1,14 @@
 {
   "name": "@prototypearea/storybook-amp",
   "version": "0.0.1",
-  "description": "Storybook addon to render stories in AMP-HTML",
+  "description": "Storybook addon that allows you to display AMP HTML components generated with react in your stories",
   "license": "MIT",
   "keywords": [
+    "storybook",
     "addon",
+    "react",
     "amp",
-    "storybook"
+    "amp-html",
   ],
   "homepage": "https://github.com/prototypearea/storybook-amp",
   "bugs": {
