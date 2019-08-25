@@ -1,5 +1,5 @@
 import React from 'react';
-import { SyntaxHighlighter } from '@storybook/components';
+import { Button, SyntaxHighlighter } from '@storybook/components';
 
 import { STORY_CHANGED } from '@storybook/core-events';
 import EVENTS from '../constants';
@@ -47,23 +47,17 @@ class AmpPanel extends React.Component {
 
     return active ? (
       <div style={{ padding: 15 }}>
-        {sourceCode && 
-          <a
-            href={`https://validator.ampproject.org/#doc=${getBase64ForAMPValidator(sourceCode)}`}
+        {sourceCode && (
+          <Button
+            small
+            outline
+            isLink
             target="_blank"
-            style={{
-              textDecoration: 'none',
-              border: 'none',
-              padding: '5px 10px',
-              display: 'inline-block',
-              color: '#fff', 
-              borderRadius: 2,
-              backgroundColor: '#005af0',
-              fontWeight: 600
-            }}
+            href={`https://validator.ampproject.org/#doc=${getBase64ForAMPValidator(sourceCode)}`}
           >
             Validate
-          </a>
+          </Button>
+        )
         }
         <div className="storybook-amp-source-code" style={{ backgroundColor: '#f6f8fa', borderLeft: '1px solid #e5e5e5', marginTop: 15 }}>
           <SyntaxHighlighter
