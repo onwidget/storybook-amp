@@ -1,0 +1,55 @@
+{
+  "name": "@prototypearea/storybook-amp",
+  "version": "0.0.1",
+  "description": "Storybook addon to render stories in AMP-HTML",
+  "license": "MIT",
+  "keywords": [
+    "addon",
+    "amp",
+    "storybook"
+  ],
+  "homepage": "https://github.com/prototypearea/storybook-amp",
+  "bugs": {
+    "url": "https://github.com/prototypearea/storybook-amp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prototypearea/storybook-amp.git"
+  },
+  "files": [
+    "dist",
+    "register.js"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel ./src --ignore test -d ./dist/",
+    "prepublish": "npm run build",
+    "storybook": "start-storybook -c ./example/.storybook",
+    "build-storybook": "build-storybook -c ./example/.storybook"
+  },
+  "dependencies": {
+    "@storybook/addons": "^5.1.0",
+    "@storybook/components": "^5.1.0",
+    "@storybook/core-events": "^5.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.0",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-env": "^7.5.0",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/react": "^5.1.0",
+    "babel-loader": "^8.0.6"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": "10.15.0",
+    "npm": "6.4.1"
+  }
+}
