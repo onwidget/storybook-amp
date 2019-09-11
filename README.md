@@ -1,11 +1,11 @@
-# Storybook AMP &middot; [![npm package](https://img.shields.io/npm/v/@prototypearea/storybook-amp?color=green&label=npm&style=flat-square)](https://www.npmjs.com/package/@prototypearea/storybook-amp)
+# Storybook AMP &middot; [![npm package](https://img.shields.io/npm/v/storybook-amp?color=green&label=npm&style=flat-square)](https://www.npmjs.com/package/storybook-amp)
 
 Storybook addon that allows you to display [AMP HTML](https://amp.dev/) components generated with react in your stories
 
 ## Installation
 
 ```sh
-npm install -D @prototypearea/storybook-amp
+npm install -D storybook-amp
 ```
 
 ## Configuration
@@ -15,7 +15,7 @@ Then create a file called `addons.js` in your storybook config.
 Add following content to it:
 
 ```js
-import '@prototypearea/storybook-amp/register';
+import 'storybook-amp/register';
 ```
 
 ## Demo
@@ -29,7 +29,7 @@ To SSR the code at runtime time use the `withAmpDecorator` decorator inside `con
 ```js
 // config.js
 import { configure, addDecorator, addParameters } from '@storybook/react';
-import { withAmpDecorator } from '@prototypearea/storybook-amp';
+import { withAmpDecorator } from 'storybook-amp';
 
 const customStyles = ''; // some styles
 
