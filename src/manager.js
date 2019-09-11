@@ -9,17 +9,17 @@ import AmpPanel from './components/AmpPanel'
 export function register() {
   addonAPI.register(ADDON_ID, api => {
 
-    addonAPI.add(PANEL_ID, {
-      type: types.PANEL,
-      title: PANEL_TITLE,
-      render: ({ key, active }) => (
-        <AmpPanel
-          key={key}
-          api={api}
-          active={active}
-          channel={addonAPI.getChannel()}
-        />
-      ),
-    });
+//    addonAPI.add(PANEL_ID, {
+//      type: types.PANEL,
+//      title: PANEL_TITLE,
+//      render: ({ key, active }) => (
+//        <AmpPanel
+//          key={key}
+//          api={api}
+//          active={active}
+//          channel={addonAPI.getChannel()}
+//        />
+//      ),
+//    });
   });
 }
