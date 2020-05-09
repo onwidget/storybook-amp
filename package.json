@@ -1,6 +1,6 @@
 {
   "name": "storybook-amp",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Storybook addon that allows you to display AMP HTML components generated with react in your stories",
   "license": "MIT",
   "keywords": [
