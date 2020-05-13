@@ -26,8 +26,8 @@
   "scripts": {
     "build": "babel ./src --ignore test -d ./dist/",
     "prepublish": "npm run build",
-    "storybook": "start-storybook -c ./example/.storybook",
-    "build-storybook": "build-storybook -c ./example/.storybook"
+    "storybook": "start-storybook -c ./example/.storybook -s example/public",
+    "build-storybook": "build-storybook -c ./example/.storybook -s example/public"
   },
   "dependencies": {
     "@storybook/addons": "^5.3.0",

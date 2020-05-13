@@ -5,6 +5,9 @@ import {storiesOf} from '@storybook/react';
 storiesOf('Components/amp-carousel', module).add('default', () => (
   <amp-carousel height="300" layout="fixed-height" type="slides">
     <div>
+      <div style={{ backgroundImage: 'url(/coffee-beans.jpg)', height: 300 }} />
+    </div>
+    <div>
       <div style={{ backgroundColor: 'blue', height: 300 }}>This is a blue box.</div>
     </div>
     <div>
