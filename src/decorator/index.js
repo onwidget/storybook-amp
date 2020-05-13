@@ -10,11 +10,12 @@ import EVENTS from '../constants';
 
 /* *************** */
 
-const getAmpHTML = (story, data = {}, templateFunc = defaultAMPHtmlTemplate) => {
+const getAmpHTML = (story, { title, styles, baseUrl } = {}, templateFunc = defaultAMPHtmlTemplate) => {
   const innerProps = {
     story,
-    title: data && data.title,
-    styles: data && data.styles && typeof data.styles === 'string' ? data.styles : '',
+    title,
+    baseUrl,
+    styles: styles && typeof styles === 'string' ? styles : '',
   }
   let storyContent = ReactDOMServer.renderToStaticMarkup(story());
 
@@ -43,7 +44,7 @@ const withAmpReactSsrDecorator = (storyFn, context = {}, { parameters }) => {
     return storyFn();
   }
 
-  const ampHtml = getAmpHTML(storyFn, { title: 'AMP Demo', styles });
+  const ampHtml = getAmpHTML(storyFn, { title: 'AMP Demo', styles, baseUrl: window.location.origin });
   const blodURL = getBlodURL(ampHtml, 'text/html');
 
   /* *************** */
