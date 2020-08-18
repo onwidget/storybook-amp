@@ -54,8 +54,8 @@ storiesOf('AMP', module)
     }
   });
   ```
-  
- ## AMP Documentation
- 
- - [AMP Project](https://amp.dev/)
- - [Awesome Amp](https://github.com/prototypearea/awesome-amp)
+
+## AMP Documentation
+
+- [AMP Project](https://amp.dev/)
+- [Awesome Amp](https://github.com/prototypearea/awesome-amp)
