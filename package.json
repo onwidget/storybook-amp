@@ -8,7 +8,9 @@
     "addon",
     "react",
     "amp",
-    "amp-html"
+    "amp-html",
+    "storybook-addon",
+    "code"
   ],
   "homepage": "https://github.com/prototypearea/storybook-amp",
   "bugs": {
