@@ -7,9 +7,9 @@
   "keywords": [
     "storybook-addons",
     "amp",
-    "amp-html"
+    "amp-html",
     "react",
-    "storybook"
+    "storybook",
     "addon"
   ],
   "homepage": "https://github.com/prototypearea/storybook-amp",
