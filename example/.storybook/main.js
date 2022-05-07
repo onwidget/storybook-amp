@@ -4,5 +4,8 @@ module.exports = {
   ],
   addons: [
     __dirname + "/../../register",
-  ]
+  ],
+  features: {
+    postcss: false,
+  },
 }

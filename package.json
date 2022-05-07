@@ -1,14 +1,16 @@
 {
   "name": "storybook-amp",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Storybook addon that allows you to display AMP HTML components generated with react in your stories",
+  "author": "prototypearea",
   "license": "MIT",
   "keywords": [
-    "storybook",
-    "addon",
-    "react",
+    "storybook-addons",
     "amp",
-    "amp-html"
+    "amp-html",
+    "react",
+    "storybook",
+    "addon"
   ],
   "homepage": "https://github.com/prototypearea/storybook-amp",
   "bugs": {
@@ -30,18 +32,20 @@
     "build-storybook": "build-storybook -c ./example/.storybook -s example/public"
   },
   "dependencies": {
-    "@storybook/addons": "^5.3.0",
-    "@storybook/components": "^5.3.0",
-    "@storybook/core-events": "^5.3.0"
+    "@storybook/addons": "^6.2.9",
+    "@storybook/components": "^6.2.9",
+    "@storybook/core-events": "^6.2.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.0",
-    "@babel/core": "^7.5.0",
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.2",
     "@babel/plugin-proposal-class-properties": "^7.3.0",
-    "@babel/preset-env": "^7.5.0",
-    "@babel/preset-react": "^7.0.0",
-    "@storybook/react": "^5.3.0",
-    "babel-loader": "^8.0.6"
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.13.13",
+    "@storybook/react": "^6.2.9",
+    "babel-loader": "^8.2.2"
   },
   "peerDependencies": {
     "react": "*",
@@ -52,5 +56,11 @@
   },
   "engines": {
     "node": ">=10.15.0"
+  },
+  "storybook": {
+    "displayName": "Storybook AMP",
+    "unsupportedFrameworks": [],
+    "supportedFrameworks": ["react"],
+    "icon": "https://raw.githubusercontent.com/prototypearea/storybook-amp/master/amp-logo.png"
   }
 }

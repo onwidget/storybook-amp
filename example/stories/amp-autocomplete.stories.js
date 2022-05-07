@@ -1,8 +1,10 @@
 import React from 'react';
 
-import {storiesOf} from '@storybook/react';
+export default {
+  title: 'Components/amp-autocomplete',
+};
 
-storiesOf('Components/amp-autocomplete', module).add('default', () => (
+export const Base = () => (
   <form
     className="sample-form"
     method="post"
@@ -21,4 +23,6 @@ storiesOf('Components/amp-autocomplete', module).add('default', () => (
       />
     </amp-autocomplete>
   </form>
-));
+);
+
+Base.storyName = 'default';

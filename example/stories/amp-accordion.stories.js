@@ -1,8 +1,10 @@
 import React from 'react';
 
-import {storiesOf} from '@storybook/react';
+export default {
+  title: 'Components/amp-accordion',
+};
 
-storiesOf('Components/amp-accordion', module).add('default', () => (
+export const Base = () => (
   <amp-accordion>
     <section expanded="">
       <h4>Section 1</h4>
@@ -20,4 +22,6 @@ storiesOf('Components/amp-accordion', module).add('default', () => (
       <p>Bunch of awesome content.</p>
     </section>
   </amp-accordion>
-));
+);
+
+Base.storyName = 'default';

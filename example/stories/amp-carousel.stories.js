@@ -1,8 +1,11 @@
 import React from 'react';
 
-import {storiesOf} from '@storybook/react';
+export default {
+  title: 'Components/amp-carousel',
+};
 
-storiesOf('Components/amp-carousel', module).add('default', () => (
+
+export const Base = () => (
   <amp-carousel height="300" layout="fixed-height" type="slides">
     <div>
       <div style={{ backgroundImage: 'url(/coffee-beans.jpg)', height: 300 }} />
@@ -17,4 +20,6 @@ storiesOf('Components/amp-carousel', module).add('default', () => (
       <div style={{ backgroundColor: 'green', height: 300  }}>This is a green box.</div>
     </div>
   </amp-carousel>
-));
+);
+
+Base.storyName = 'default';
