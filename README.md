@@ -20,7 +20,7 @@ import 'storybook-amp/register';
 
 ## Demo
 
-https://storybook-amp.netlify.com
+https://storybook-amp.prototypearea.com/
 
 ## Usage
 
