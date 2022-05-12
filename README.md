@@ -59,8 +59,8 @@ export const parameters = {
 
   amp: {              // 👈 The addon parameters here
     isEnabled: true,  // Enable the addon, false by default (boolean)
-    scripts           // Custom css styles (string)
-    styles            // Global scripts to add (string)
+    scripts,          // Custom css styles (string)
+    styles,           // Global scripts to add (string)
   },
 };
 ```
