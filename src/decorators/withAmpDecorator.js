@@ -1,21 +1,22 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
-import addonAPI from '@storybook/addons';
+import addonAPI, { makeDecorator } from '@storybook/addons';
 
 import defaultAMPHtmlTemplate from './templates/defaultAMPHtmlTemplate'
 import getBlodURL from '../utils/getBlodURL';
 
-import EVENTS from '../constants';
+import EVENTS, { PARAM_KEY } from '../constants';
 
 /* *************** */
 
-const getAmpHTML = (story, { title, styles, baseUrl } = {}, templateFunc = defaultAMPHtmlTemplate) => {
+const getAmpHTML = (story, { title, scripts, styles, baseUrl } = {}, templateFunc = defaultAMPHtmlTemplate) => {
   const innerProps = {
     story,
     title,
-    baseUrl,
+    scripts: scripts && typeof scripts === 'string' ? scripts : '',
     styles: styles && typeof styles === 'string' ? styles : '',
+    baseUrl,
   }
   let storyContent = ReactDOMServer.renderToStaticMarkup(story());
 
@@ -31,20 +32,22 @@ const getAmpHTML = (story, { title, styles, baseUrl } = {}, templateFunc = defau
 }
 /* *************** */
 
-const withAmpReactSsrDecorator = (storyFn, context = {}, { parameters }) => {
+const decorator = (storyFn, context = {}, { parameters }) => {
+
+  const { title } = context
 
   const {
-    styles = '',
     isEnabled = false,
     template = 'amphtml',
-    scripts = [],
+    scripts = '',
+    styles = '',
   } = parameters;
 
   if (!isEnabled) {
     return storyFn();
   }
 
-  const ampHtml = getAmpHTML(storyFn, { title: 'AMP Demo', styles, baseUrl: window.location.origin });
+  const ampHtml = getAmpHTML(storyFn, { title, scripts, styles, baseUrl: window.location.origin });
   const blodURL = getBlodURL(ampHtml, 'text/html');
 
   /* *************** */
@@ -66,15 +69,23 @@ const withAmpReactSsrDecorator = (storyFn, context = {}, { parameters }) => {
         __html: `body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 0; margin: 0; }`}}
       />
       <iframe
+        id="amp-iframe"
         src={blodURL}
-        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none', backgroundColor: '#fff', }}
+        title="Iframe"
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
       />
     </>
   )
 };
 
-export default withAmpReactSsrDecorator;
-
+export const withAmpDecorator = makeDecorator({
+  name: 'withAmpDecorator',
+  parameterName: PARAM_KEY,
+  wrapper: (storyFn, context, { parameters }) => {
+    
+    return decorator(storyFn, context, { parameters });
+  }
+})
 
 // if (true) { // if mobile
 //   ampHtml = ampHtml.replace('</head>', `<style>*{cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEbSURBVDiNndMxK4ZRGMbx3zmRMrwvM2XCQFFik/IJpCw+hJLPgfIhLBY+gEEGJQPFwGZg9TIoBrfhOfSQHl7XeM7/fw3nvk+KCPWklEawgGlMlOMrnOMoIm6/8B8FKaWMFazhGQ94LFwbg+jHDvYi4u2zIKWUsIk5XNfE72ljHKfYiIjI5WIZMzhrkJW7s8IuQ8IwdnGDpwa5nhbGsJqxiNcuZIV9xWJWvXY3cr1kOmMSnX8UdDCZEb+RDYmMS9WMu80gLrNqw1r/KGjhPOMQvaol+Wva6MFhjoh7bGEUuVGrkgu7HRH3H8IBTjCLgQZ5oDAnxfnymRKWsI4X1Zw7NbGFPmxjP4qYfvjOQ5jHlGpHqCZ1geOIuKvz76QSW1T3cwmnAAAAAElFTkSuQmCC') 10 10, auto !important; }</style></head>`);

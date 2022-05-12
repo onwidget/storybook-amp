@@ -1,0 +1,96 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import LinkTo from "@storybook/addon-links/react";
+
+import LogoUrl from "../../public/amp-logo.png";
+
+<Meta
+  title="Docs/Get started"
+  id="get-started"
+  parameters={{
+    viewport: {
+      defaultViewport: "responsive",
+    },
+    amp: {
+      isEnabled: false,
+    },
+    previewTabs: {
+      canvas: {
+        title: "Docs",
+      },
+    },
+    options: {
+      isToolshown: false,
+      showPanel: false,
+    },
+  }}
+/>
+
+<img src={LogoUrl} style={{ float: "left", width: 80, marginRight: 20 }} />
+
+# Storybook AMP
+
+Storybook addon that allows you to display AMP HTML components generated with React in your stories
+
+<br />
+
+---
+
+<br />
+<br />
+
+### Examples Components
+
+<ul>
+  <li>
+    <LinkTo kind="Components/amp-accordion" story="base">
+      amp-accordion
+    </LinkTo>
+  </li>
+  <li>
+    <LinkTo kind="Components/amp-autocomplete" story="base">
+      amp-autocomplete
+    </LinkTo>
+  </li>
+  <li>
+    <LinkTo kind="Components/amp-carousel" story="base">
+      amp-carousel
+    </LinkTo>
+  </li>
+  <li>
+    <LinkTo kind="Components/amp-date-picker" story="base">
+      amp-date-picker
+    </LinkTo>
+  </li>
+</ul>
+
+<br />
+
+### Tested Storybook Addons
+
+<ul>
+  <li>
+    <LinkTo kind="Tested Addons/Viewport" story="base">
+      Addon Viewport
+    </LinkTo>
+  </li>
+  <li>
+    <LinkTo kind="Tested Addons/Controls" story="base">
+      Addon Controls
+    </LinkTo>
+  </li>
+  <li>
+    Addon Backgrounds
+  </li>
+  <li>
+    Addon Storysource
+  </li>
+  <li>
+    Addon Docs (Coming soon)
+  </li>
+  <li>
+    Addon Toolbars (Coming soon)
+  </li>
+  <li>
+    Addon Accessibility (Coming soon)
+  </li>
+</ul>

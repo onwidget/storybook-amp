@@ -1,6 +1,19 @@
 # Storybook AMP &middot; [![npm package](https://img.shields.io/npm/v/storybook-amp?color=green&label=npm&style=flat-square)](https://www.npmjs.com/package/storybook-amp)
 
-Storybook addon that allows you to display [AMP HTML](https://amp.dev/) components generated with react in your stories
+Storybook addon that allows you to display [AMP HTML](https://amp.dev/) components generated with React in your stories
+
+## Features
+
+- Allows to deliver in each story the AMP code resulting from the SSR.
+- Adds a custom panel to validate the story and view the resulting source code.
+
+<br />
+
+## Demo
+
+https://storybook-amp.prototypearea.com/
+
+<br />
 
 ## Installation
 
@@ -8,52 +21,76 @@ Storybook addon that allows you to display [AMP HTML](https://amp.dev/) componen
 npm install -D storybook-amp
 ```
 
+<br />
+
 ## Configuration
 
-Then create a file called `addons.js` in your storybook config.
-
-Add following content to it:
+Next, update `.storybook/main.js` to the following:
 
 ```js
-import 'storybook-amp/register';
+// .storybook/main.js
+
+module.exports = {
+  stories: [
+    // ...
+  ],
+  addons: [
+    // Other Storybook addons
+
+    '@storybook/storybook-amp', // 👈 The addon registered here
+  ],
+};
 ```
 
-## Demo
-
-https://storybook-amp.prototypearea.com/
+<br />
 
 ## Usage
 
-To SSR the code at runtime time use the `withAmpDecorator` decorator inside `config.js` or specific story.  To set custom settings, use the  `amp`  parameter. 
+To set custom settings, use the  `amp` parameter. 
 
 ```js
-// config.js
-import { configure, addDecorator, addParameters } from '@storybook/react';
-import { withAmpDecorator } from 'storybook-amp';
+// .storybook/preview.js
 
-const customStyles = ''; // some styles
+const scripts = '';
+const styles = '';
 
-// global
-addDecorator(withAmpDecorator)
-addParameters({
-  amp: {
-    isEnabled: true,
-    styles: customStyles, // Custom styles from some string
+export const parameters = {
+  // Other defined parameters
+
+  amp: {              // 👈 The addon parameters here
+    isEnabled: true,  // Enable the addon, false by default (boolean)
+    scripts           // Custom css styles (string)
+    styles            // Global scripts to add (string)
   },
-});
+};
 ```
 
 You can use the `amp` parameter to override settings on each story individually:
 
 ```js
-// per story
-storiesOf('AMP', module)
-  .add('Default', () => <Button>Send</Button>, {
+// Story example
+
+export default {
+  title: "Components/amp-youtube",
+  parameters: {
     amp: {
-      isEnabled: false,
-    }
-  });
-  ```
+      scripts: // 👈 Script needed by the story
+        `<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>`,
+    },
+  },
+};
+
+export const Story = (args) => (
+  <amp-youtube
+    width="480"
+    height="270"
+    layout="responsive"
+    data-videoid='lBTCB7yLs8Y'
+  ></amp-youtube>
+)
+```
+  
+<br />
 
 ## AMP Documentation
 

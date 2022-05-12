@@ -1,7 +1,14 @@
-import React from 'react';
+import React from "react";
 
 export default {
-  title: 'Components/amp-accordion',
+  title: "Components/amp-accordion",
+  parameters: {
+    amp: {
+      scripts: `
+        <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+      `,
+    },
+  },
 };
 
 export const Base = () => (
@@ -13,7 +20,7 @@ export const Base = () => (
     <section>
       <h4>Section 2</h4>
       <div>
-        Bunch of even more awesome content. This time in a{' '}
+        Bunch of even more awesome content. This time in a{" "}
         <code>&lt;div&gt;</code>.
       </div>
     </section>
@@ -24,4 +31,4 @@ export const Base = () => (
   </amp-accordion>
 );
 
-Base.storyName = 'default';
+Base.storyName = "amp-accordion";

@@ -1,17 +1,6 @@
-import { makeDecorator } from '@storybook/addons';
+if (module && module.hot && module.hot.decline) {
+  module.hot.decline();
+}
 
-import { PARAM_KEY } from './constants'
-import decorator from './decorator'
-
-export const withAmpDecorator = makeDecorator({
-  name: 'withAmpDecorator',
-  parameterName: PARAM_KEY,
-  wrapper: (storyFn, context, { parameters }) => {
-    
-    return decorator(storyFn, context, { parameters });
-  }
-})
-
-export { register } from './manager';
-
-export default () => {}
+// make it work with --isolatedModules
+export default {};

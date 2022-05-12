@@ -1,13 +1,24 @@
-import { addDecorator, addParameters } from '@storybook/react';
-import { withAmpDecorator } from '../../dist';
+const customStyles = '';
 
-const customStyles = ''; // some styles
-
-addDecorator(withAmpDecorator)
-
-addParameters({
+export const parameters = {
   amp: {
     isEnabled: true,
-    styles: customStyles, // Custom styles from some string
+    styles: customStyles,
   },
-});
+
+  viewport: {
+    defaultViewport: 'mobile1',
+  },
+  previewTabs: {
+    'storybook/docs/panel': {
+      hidden: true,
+    },
+  },
+  controls: {
+    disabled: true
+  },
+  options: {
+    isToolshown: true,
+    showPanel: true,
+  },
+};

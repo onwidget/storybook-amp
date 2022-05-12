@@ -1,11 +1,28 @@
 module.exports = {
   stories: [
-    "../stories/*.stories.(js|mdx)",
+    "../stories/docs/*.stories.(js|mdx)",
+    "../stories/components/*.stories.(js|mdx)",
+    "../stories/addons/*.stories.(js|mdx)",
   ],
   addons: [
-    __dirname + "/../../register",
+    "../../preset.js",
+
+    "@storybook/addon-storysource",
+    "@storybook/addon-links",
+
+    "@storybook/addon-viewport",
+    {
+      name: "@storybook/addon-docs",
+      options: {
+        sourceLoaderOptions: {
+          injectStoryParameters: false,
+        },
+      },
+    },
+    "@storybook/addon-controls",
+    "@storybook/addon-backgrounds",
   ],
   features: {
     postcss: false,
   },
-}
+};
