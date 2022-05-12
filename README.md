@@ -11,7 +11,7 @@ Storybook addon that allows you to display [AMP HTML](https://amp.dev/) componen
 
 ## Demo
 
-https://storybook-amp.prototypearea.com/
+https://storybook-amp.prototypearea.dev/
 
 <br />
 
