@@ -1,0 +1,1 @@
+export default (type) => type === "amp4email" ? "email" : type === "amp4ads" ? "ads" : null

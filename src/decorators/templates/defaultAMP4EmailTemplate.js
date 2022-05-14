@@ -3,7 +3,7 @@ export default ({
   scripts,
 }) => (
 `<!doctype html>
-<html amp4email lang="en">
+<html amp4email lang="en" data-css-strict>
   <head>
     <meta charSet="utf-8" />
     <script async src="https://cdn.ampproject.org/v0.js"></script>
