@@ -4,8 +4,10 @@ Storybook addon that allows you to display [AMP HTML](https://amp.dev/) componen
 
 ## Features
 
-- Allows to deliver in each story the AMP code resulting from the SSR.
-- Adds a custom panel to validate the story and view the resulting source code.
+- Deliver in each story the output code (AMP ready) resulting from the SSR.
+- Works with [AMP websites](https://amp.dev/about/websites/), [AMP email](https://amp.dev/about/email/) and [AMP ads](https://amp.dev/about/ads/)
+- Adds addon panel to validate the story (using online [AMP Validator](https://validator.ampproject.org/)) and view the output code.
+- Support Styled Components using a custom render function
 
 <br />
 
@@ -59,8 +61,8 @@ export const parameters = {
 
   amp: {              // 👈 The addon parameters here
     isEnabled: true,  // Enable the addon, false by default (boolean)
-    scripts,          // Custom css styles (string)
-    styles,           // Global scripts to add (string)
+    scripts,          // Global scripts to add, empty by default (string)
+    styles,           // Custom css styles, empty by default (string)
   },
 };
 ```
@@ -89,7 +91,37 @@ export const Story = (args) => (
   ></amp-youtube>
 )
 ```
+
+For more examples and configurations go to the [Demo](#demo)
   
+<br />
+
+### Tested Addons Compatibility
+
+<ul>
+  <li>
+    Addon Viewport
+  </li>
+  <li>
+    Addon Controls
+  </li>
+  <li>
+    Addon Backgrounds
+  </li>
+  <li>
+    Addon Storysource
+  </li>
+  <li>
+    Addon Docs (Coming soon)
+  </li>
+  <li>
+    Addon Toolbars (Coming soon)
+  </li>
+  <li>
+    Addon Accessibility (Coming soon)
+  </li>
+</ul>
+
 <br />
 
 ## AMP Documentation
