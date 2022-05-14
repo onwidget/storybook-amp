@@ -1,6 +1,6 @@
 # Storybook AMP &middot; [![npm package](https://img.shields.io/npm/v/storybook-amp?color=green&label=npm&style=flat-square)](https://www.npmjs.com/package/storybook-amp)
 
-Storybook addon that allows you to display [AMP HTML](https://amp.dev/) components generated with React in your stories
+Storybook addon for [AMP (Accelerated Mobile Pages)](https://amp.dev/). Allows to display in your stories *AMP Html* components generated with React.
 
 ## Features
 
