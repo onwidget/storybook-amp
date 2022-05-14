@@ -1,10 +1,10 @@
 import React from "react";
 
 export default {
-  title: "Tested Addons/Controls",
+  title: "Addons/Controls",
   parameters: {
     controls: {
-      disabled: false,
+      disable: false,
     },
     amp: {
       scripts: `

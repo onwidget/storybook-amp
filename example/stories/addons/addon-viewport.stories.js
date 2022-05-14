@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default {
-  title: 'Tested Addons/Viewport',
+  title: 'Addons/Viewport',
   parameters: {
     viewport: {
       defaultViewport: 'tablet',

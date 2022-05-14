@@ -1,7 +1,7 @@
 import React from "react";
 
 export default {
-  title: "Components/amp-autocomplete",
+  title: "Components/Websites/amp-autocomplete",
   parameters: {
     amp: {
       scripts: `
@@ -22,7 +22,8 @@ export const Base = () => (
     target="_top"
   >
     <amp-autocomplete filter="substring">
-      <input />
+      <label for="control">Label</label>
+      <input id="control" placeholder="Enter fruit (apple, orange ...)"/>
       <script
         type="application/json"
         dangerouslySetInnerHTML={{

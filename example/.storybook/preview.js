@@ -1,9 +1,9 @@
-const customStyles = '';
+import React from "react"
 
 export const parameters = {
   amp: {
     isEnabled: true,
-    styles: customStyles,
+    styles: '', // Custom AMP styles
   },
 
   viewport: {
@@ -15,7 +15,7 @@ export const parameters = {
     },
   },
   controls: {
-    disabled: true
+    disable: true
   },
   options: {
     isToolshown: true,

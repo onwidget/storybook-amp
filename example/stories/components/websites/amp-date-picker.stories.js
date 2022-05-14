@@ -1,7 +1,7 @@
 import React from "react";
 
 export default {
-  title: "Components/amp-date-picker",
+  title: "Components/Websites/amp-date-picker",
   parameters: {
     amp: {
       scripts: `
