@@ -2,11 +2,14 @@
 
 Storybook addon for [AMP (Accelerated Mobile Pages)](https://amp.dev/). Allows to display in your stories *AMP Html* components generated with React.
 
+![Screenshot](screenshot.png)
+
 ## Features
 
 - Deliver in each story the output code (AMP ready) resulting from the SSR.
 - Works with [AMP websites](https://amp.dev/about/websites/), [AMP email](https://amp.dev/about/email/) and [AMP ads](https://amp.dev/about/ads/)
-- Adds addon panel to validate the story (using online [AMP Validator](https://validator.ampproject.org/)) and view the output code.
+- Realtime AMP validation.
+- Adds addon panel to also validate the story (using online [AMP Validator](https://validator.ampproject.org/)) and view the output code.
 - Support Styled Components using a custom render function
 
 ## Demo
