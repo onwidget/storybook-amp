@@ -9,8 +9,6 @@ Storybook addon for [AMP (Accelerated Mobile Pages)](https://amp.dev/). Allows t
 - Adds addon panel to validate the story (using online [AMP Validator](https://validator.ampproject.org/)) and view the output code.
 - Support Styled Components using a custom render function
 
-<br />
-
 ## Demo
 
 https://storybook-amp.prototypearea.dev/
@@ -39,7 +37,7 @@ module.exports = {
   addons: [
     // Other Storybook addons
 
-    '@storybook/storybook-amp', // 👈 The addon registered here
+    'storybook-amp', // 👈 The addon registered here
   ],
 };
 ```

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from '@emotion/styled';
 import {
   Button,
@@ -6,11 +6,7 @@ import {
   Tabs,
   WithTooltip,
   TooltipMessage,
-  Icons
 } from "@storybook/components";
-
-import { STORY_CHANGED } from "@storybook/core-events";
-import EVENTS from "../constants";
 
 import getBase64ForAMPValidator from "../utils/getBase64ForAMPValidator";
 import getHtmlFormatForType from "../utils/getHtmlFormatForType"
@@ -27,39 +23,24 @@ const Tooltip = ({ onHide }) => (
   />
 );
 
-const AmpPanel = ({ api, channel }) => {
-  const [sourceCode, setSourceCode] = useState(null);
-  const [type, setType] = useState(null);
+export const PanelContent = ({ data }) => {
+  if (!data) {
+    return null;
+  }
+  const { type, html, isValid } = data;
 
   const handleValidate = () => {
     const htmlFormat = getHtmlFormatForType(type);
     window.open(
       `https://validator.ampproject.org/#doc=${getBase64ForAMPValidator(
-        sourceCode
+        html
       )}${htmlFormat ? `&htmlFormat=${htmlFormat}` : ''}`,
       "_newtab" + Date.now()
     );
   };
 
-  useEffect(() => {
-    function handleRefreshData(data) {
-      setType(data && data.type ? data.type : null);
-      setSourceCode(data && data.ampHtml ? data.ampHtml : "");
-    }
-
-    function handleStoryChange(id) {
-      setType(null);
-      setSourceCode(null);
-    }
-
-    api.on(STORY_CHANGED, handleStoryChange);
-    channel.on(EVENTS.AMP_HTML_RESULT, handleRefreshData);
-
-    return function unmount() {
-      api.off(STORY_CHANGED, handleStoryChange);
-      channel.removeListener(EVENTS.AMP_HTML_RESULT, handleRefreshData);
-    };
-  }, []);
+  const typeLabel = getAmpLabelForType(type);
+  const outputTabTitle = `Output${typeLabel ? ` (${typeLabel})` : ''}`
 
   return (
     <Tabs
@@ -69,8 +50,8 @@ const AmpPanel = ({ api, channel }) => {
       absolute={true}
       tools={
         <div style={{ display: "flex", alignItems: "center" }}>
-          {type ? <div style={{ marginRight: 10}}>{getAmpLabelForType(type)}</div> : null}
-          {sourceCode && (
+          {/* <Badge status="positive" style={{ marginRight: 8}}>PASS</Badge> */}
+          {html && (
             <WithTooltip placement="auto" trigger="hover" tooltip={<Tooltip />}>
               <ValidateButton
                 small
@@ -78,17 +59,17 @@ const AmpPanel = ({ api, channel }) => {
                 type="button"
                 onClick={(e) => handleValidate(e)}
               >
-                <Icons icon="lightning" />Validate
+                Validate
               </ValidateButton>
             </WithTooltip>
           )}
         </div>
       }
     >
-      <div id="tabHtmlCode" title={"Output"} color="#888">
+      <div id="tabHtmlCode" title={outputTabTitle} color="#888">
        {/* #ff4400 #66bf3c */}
         <div className="storybook-amp-source-code">
-          {sourceCode === null ? (
+          {html === null ? (
             <div style={{ padding: 10 }}>Loading ...</div>
           ) : (
             <SyntaxHighlighter
@@ -99,7 +80,7 @@ const AmpPanel = ({ api, channel }) => {
               bordered={false}
               padded
             >
-              {sourceCode}
+              {html}
             </SyntaxHighlighter>
           )}
         </div>
@@ -110,5 +91,3 @@ const AmpPanel = ({ api, channel }) => {
     </Tabs>
   );
 };
-
-export default AmpPanel;

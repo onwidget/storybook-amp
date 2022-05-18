@@ -1,25 +1,22 @@
-import React from "react"
-import ReactDOMServer from "react-dom/server";
+import React from "react";
+import { renderToString } from "react-dom/server";
 
 import { CacheProvider } from "@emotion/react";
 import createEmotionServer from "@emotion/server/create-instance";
 import createCache from "@emotion/cache";
 
 export default (storyFn, context) => {
-  const key = "custom";
-  const cache = createCache({ key });
-  const { extractCriticalToChunks, constructStyleTagsFromChunks } =
-    createEmotionServer(cache);
+  const cache = createCache({ key: "amp" });
+  const { extractCritical } = createEmotionServer(cache);
 
-  const html = ReactDOMServer.renderToString(
+  const element = (
     <CacheProvider value={cache}>{storyFn(context)}</CacheProvider>
   );
 
-  const chunks = extractCriticalToChunks(html);
-  const styles = constructStyleTagsFromChunks(chunks);
+  const { html, css: styles } = extractCritical(renderToString(element));
 
-  console.log("Chunks !!!!");
-  console.log(chunks);
+  console.log("Html !!!!");
+  console.log(html);
 
   console.log("Styles !!!!");
   console.log(styles);

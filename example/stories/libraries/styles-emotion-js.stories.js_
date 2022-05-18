@@ -1,24 +1,6 @@
 import React from "react";
-import styled from "@emotion/styled"
-import customRenderFunc from "../../../render-fn/emotion-js"
-
-export default {
-  title: "Libraries/Emotion Js",
-  parameters: {
-    amp: {
-      scripts: `
-        <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
-      `,
-      renderFn: customRenderFunc
-    },
-  },
-};
-
-export const Base = () => (
-  <StyledComponent />
-);
-
-Base.storyName = "Emotion Js";
+import styled from "@emotion/styled";
+import renderFn from "../../../render-fn/emotion-js";
 
 const Component = ({ className }) => (
   <amp-accordion class={className}>
@@ -38,13 +20,29 @@ const Component = ({ className }) => (
       <p>Bunch of awesome content.</p>
     </section>
   </amp-accordion>
-)
+);
 
 const StyledComponent = styled(Component)`
   & section[expanded] {
-    background: red
+    background: red;
   }
 
   & section:not([expanded]) {
   }
-`
+`;
+
+export default {
+  title: "Libraries/Emotion Js",
+  parameters: {
+    amp: {
+      scripts: `
+        <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+      `,
+      renderFn,
+    },
+  },
+};
+
+export const Base = () => <StyledComponent />;
+
+Base.storyName = "Emotion Js";

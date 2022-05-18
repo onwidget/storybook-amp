@@ -1,4 +1,4 @@
-import ReactDOMServer from "react-dom/server";
+import { renderToStaticMarkup } from "react-dom/server";
 
 import { ServerStyleSheet } from "styled-components";
 
@@ -9,7 +9,7 @@ export default (storyFn, context) => {
   const sheet = new ServerStyleSheet();
 
   try {
-    html = ReactDOMServer.renderToStaticMarkup(sheet.collectStyles(storyFn(context)));
+    html = renderToStaticMarkup(sheet.collectStyles(storyFn(context)));
     const styleTags = sheet.getStyleTags();
     styles = styleTags.replace(/<style[^>]*>/, "").replace("</style>", "");
   } catch (error) {

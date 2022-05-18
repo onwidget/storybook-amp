@@ -1,6 +1,6 @@
 {
   "name": "storybook-amp",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Storybook addon for AMP (Accelerated Mobile Pages). Allows to display in your stories AMP Html components generated with React.",
   "author": "prototypearea",
   "license": "MIT",
@@ -12,7 +12,9 @@
     "amphtml",
     "react",
     "storybook",
-    "addon"
+    "addon",
+    "test",
+    "storybook amp"
   ],
   "homepage": "https://github.com/prototypearea/storybook-amp",
   "bugs": {
@@ -38,11 +40,10 @@
     "build-storybook": "build-storybook -c ./example/.storybook -s example/public"
   },
   "dependencies": {
-    "@storybook/addons": "^6.4.22",
-    "@storybook/components": "^6.4.22",
-    "@storybook/core-events": "^6.4.22",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@storybook/addons": "^6.0.0",
+    "@storybook/components": "^6.0.0",
+    "@storybook/core-events": "^6.0.0",
+    "global": "^4.4.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.16",
@@ -54,25 +55,28 @@
     "@emotion/react": "^11.9.0",
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.8.1",
-    "@storybook/addon-backgrounds": "^6.4.22",
-    "@storybook/addon-controls": "^6.4.22",
-    "@storybook/addon-docs": "^6.4.22",
-    "@storybook/addon-links": "^6.4.22",
-    "@storybook/addon-storysource": "^6.4.22",
-    "@storybook/addon-viewport": "^6.4.22",
-    "@storybook/react": "^6.4.22",
+    "@storybook/addon-backgrounds": "^6.0.0",
+    "@storybook/addon-controls": "^6.0.0",
+    "@storybook/addon-docs": "^6.0.0",
+    "@storybook/addon-links": "^6.0.0",
+    "@storybook/addon-storysource": "^6.0.0",
+    "@storybook/addon-viewport": "^6.0.0",
+    "@storybook/react": "^6.0.0",
     "babel-loader": "^8.2.2",
-    "styled-components": "^5.3.5"
+    "storybook-css-modules": "^1.0.0",
+    "styled-components": "^5.3.5",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "publishConfig": {
     "access": "public"
   },
   "engines": {
-    "node": ">=10.15.0"
+    "node": ">=14"
   },
   "storybook": {
     "displayName": "Storybook AMP",
@@ -80,6 +84,6 @@
     "supportedFrameworks": [
       "react"
     ],
-    "icon": "https://raw.githubusercontent.com/prototypearea/storybook-amp/master/amp-logo.png"
+    "icon": "https://raw.githubusercontent.com/prototypearea/storybook-amp/main/amp-logo.png"
   }
 }

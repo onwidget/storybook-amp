@@ -24,6 +24,8 @@ module.exports = {
     },
     "@storybook/addon-controls",
     "@storybook/addon-backgrounds",
+
+    "storybook-css-modules",
   ],
   features: {
     postcss: false,

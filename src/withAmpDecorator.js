@@ -4,9 +4,11 @@ import ReactDOMServer from "react-dom/server";
 import addonAPI, { makeDecorator } from "@storybook/addons";
 
 import { getTemplateFn } from "./templates";
-import getBlodURL from "../utils/getBlodURL";
+import getBlodURL from "./utils/getBlodURL";
 
-import EVENTS, { PARAM_KEY } from "../constants";
+import { PARAM_KEY, EVENTS } from "./constants";
+
+import getHtmlFormatForType from "./utils/getHtmlFormatForType";
 
 const defaultRenderFn = (storyFn, context) => {
   const html = ReactDOMServer.renderToStaticMarkup(storyFn(context));
@@ -64,24 +66,54 @@ const decorator = (storyFn, context = {}, { parameters }) => {
   }
 
   const { type, templateFn } = getTemplateFn(template);
-  const ampHtml = getAmpHTML(storyFn, {
-    type,
-    title,
-    scripts,
-    styles,
-    renderFn,
-    context,
-    parameters,
-    baseUrl: window.location.origin,
-  }, templateFn);
+  const ampHtml = getAmpHTML(
+    storyFn,
+    {
+      type,
+      title,
+      scripts,
+      styles,
+      renderFn,
+      context,
+      parameters,
+      baseUrl: window.location.origin,
+    },
+    templateFn
+  );
 
   const blodURL = getBlodURL(ampHtml, "text/html");
 
+  const isValid = function (html, format) {
+    const parentWindow = window?.parent?.window;
+    return new Promise((resolve, reject) => {
+      if (
+        parentWindow?.__STORYBOOK_AMP__?.validator?.isReady &&
+        parentWindow?.amp?.validator?.validateString
+      ) {
+        const validationResults = parentWindow?.amp?.validator?.validateString(
+          html,
+          format
+        );
+        resolve(validationResults?.status === "PASS");
+      } else if (parentWindow?.__STORYBOOK_AMP__?.validator?.init) {
+        parentWindow?.__STORYBOOK_AMP__?.validator?.init().then(() => {
+          const validationResults =
+            parentWindow?.amp?.validator?.validateString(
+              html,
+              format
+            );
+          resolve(validationResults?.status === "PASS");
+        });
+      }
+    });
+  };
+
   /* *************** */
   const channel = addonAPI.getChannel();
-  channel.emit(EVENTS.AMP_HTML_RESULT, {
-    ampHtml: ampHtml,
-    type
+  channel.emit(EVENTS.RESULT, {
+    html: ampHtml,
+    type,
+    isValid,
   });
   /* *************** */
 
@@ -122,7 +154,3 @@ export const withAmpDecorator = makeDecorator({
     return decorator(storyFn, context, { parameters });
   },
 });
-
-// if (true) { // if mobile
-//   ampHtml = ampHtml.replace('</head>', `<style>*{cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEbSURBVDiNndMxK4ZRGMbx3zmRMrwvM2XCQFFik/IJpCw+hJLPgfIhLBY+gEEGJQPFwGZg9TIoBrfhOfSQHl7XeM7/fw3nvk+KCPWklEawgGlMlOMrnOMoIm6/8B8FKaWMFazhGQ94LFwbg+jHDvYi4u2zIKWUsIk5XNfE72ljHKfYiIjI5WIZMzhrkJW7s8IuQ8IwdnGDpwa5nhbGsJqxiNcuZIV9xWJWvXY3cr1kOmMSnX8UdDCZEb+RDYmMS9WMu80gLrNqw1r/KGjhPOMQvaol+Wva6MFhjoh7bGEUuVGrkgu7HRH3H8IBTjCLgQZ5oDAnxfnymRKWsI4X1Zw7NbGFPmxjP4qYfvjOQ5jHlGpHqCZ1geOIuKvz76QSW1T3cwmnAAAAAElFTkSuQmCC') 10 10, auto !important; }</style></head>`);
-// }

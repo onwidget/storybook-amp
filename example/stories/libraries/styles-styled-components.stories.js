@@ -1,24 +1,6 @@
 import React from "react";
 import styled from "styled-components"
-import customRenderFunc from "../../../render-fn/styled-components"
-
-export default {
-  title: "Libraries/Styled Components",
-  parameters: {
-    amp: {
-      scripts: `
-        <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
-      `,
-      renderFn: customRenderFunc
-    },
-  },
-};
-
-export const Base = () => (
-  <StyledComponent />
-);
-
-Base.storyName = "Styled Components";
+import renderFn from "../../../render-fn/styled-components"
 
 const Component = ({ className }) => (
   <amp-accordion class={className} animate="">
@@ -62,3 +44,21 @@ const StyledComponent = styled(Component)`
     color: #fff;
   }
 `
+
+export default {
+  title: "Libraries/Styled Components",
+  parameters: {
+    amp: {
+      scripts: `
+        <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+      `,
+      renderFn
+    },
+  },
+};
+
+export const Base = () => (
+  <StyledComponent />
+);
+
+Base.storyName = "Styled Components";

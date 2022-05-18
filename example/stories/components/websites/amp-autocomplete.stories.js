@@ -22,7 +22,7 @@ export const Base = () => (
     target="_top"
   >
     <amp-autocomplete filter="substring">
-      <label for="control">Label</label>
+      <label htmlFor="control">Label</label>
       <input id="control" placeholder="Enter fruit (apple, orange ...)"/>
       <script
         type="application/json"
