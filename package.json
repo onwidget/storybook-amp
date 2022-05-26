@@ -1,8 +1,12 @@
 {
   "name": "storybook-amp",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Storybook addon for AMP (Accelerated Mobile Pages). Allows to display in your stories AMP Html components generated with React.",
-  "author": "prototypearea",
+  "author": {
+    "name": "onWidget",
+    "email": "contact@onwidget.com",
+    "url": "https://github.com/onwidget"
+  },
   "license": "MIT",
   "keywords": [
     "storybook-addons",
@@ -16,13 +20,13 @@
     "test",
     "storybook amp"
   ],
-  "homepage": "https://github.com/prototypearea/storybook-amp",
+  "homepage": "https://github.com/onwidget/storybook-amp",
   "bugs": {
-    "url": "https://github.com/prototypearea/storybook-amp/issues"
+    "url": "https://github.com/onwidget/storybook-amp/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/prototypearea/storybook-amp.git"
+    "url": "https://github.com/onwidget/storybook-amp.git"
   },
   "files": [
     "dist/**/*",
@@ -84,6 +88,6 @@
     "supportedFrameworks": [
       "react"
     ],
-    "icon": "https://raw.githubusercontent.com/prototypearea/storybook-amp/main/amp-logo.png"
+    "icon": "https://raw.githubusercontent.com/onwidget/storybook-amp/main/amp-logo.png"
   }
 }
