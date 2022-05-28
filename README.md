@@ -14,7 +14,7 @@ Storybook addon for [AMP (Accelerated Mobile Pages)](https://amp.dev/). Allows t
 
 ## Demo
 
-https://demo.onwidget.com/storybook-amp/
+<a href="https://demo.onwidget.com/storybook-amp/" target="_blank">demo.onwidget.com/storybook-amp/</a>
 
 <br />
 
