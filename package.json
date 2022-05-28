@@ -20,7 +20,7 @@
     "test",
     "storybook amp"
   ],
-  "homepage": "https://github.com/onwidget/storybook-amp",
+  "homepage": "https://storybook.js.org/addons/storybook-amp",
   "bugs": {
     "url": "https://github.com/onwidget/storybook-amp/issues"
   },
