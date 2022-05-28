@@ -4,6 +4,6 @@ import { addons } from "@storybook/addons";
 addons.setConfig({
   theme: create({
     brandTitle: "Storybook AMP",
-    brandUrl: "https://github.com/prototypearea/storybook-amp",
+    brandUrl: "https://github.com/onwidget/storybook-amp",
   })
 });
