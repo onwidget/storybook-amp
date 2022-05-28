@@ -14,7 +14,7 @@ Storybook addon for [AMP (Accelerated Mobile Pages)](https://amp.dev/). Allows t
 
 ## Demo
 
-https://storybook-amp.prototypearea.dev/
+https://demo.onwidget.com/storybook-amp/
 
 <br />
 
@@ -121,6 +121,9 @@ For more examples and configurations go to the [Demo](#demo)
   <li>
     Addon Accessibility (Coming soon)
   </li>
+  <li>
+    Addon Chromatic (Coming soon)
+  </li>
 </ul>
 
 <br />
@@ -128,4 +131,4 @@ For more examples and configurations go to the [Demo](#demo)
 ## AMP Documentation
 
 - [AMP Project](https://amp.dev/)
-- [Awesome Amp](https://github.com/prototypearea/awesome-amp)
+- [Awesome Amp](https://github.com/onwidget/awesome-amp)
