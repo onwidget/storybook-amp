@@ -1,6 +1,6 @@
 {
   "name": "storybook-amp",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "Storybook addon for AMP (Accelerated Mobile Pages). Allows to display in your stories AMP Html components generated with React.",
   "author": {
     "name": "onWidget",
