@@ -1,8 +1,28 @@
-# Storybook AMP &middot; [![npm package](https://img.shields.io/npm/v/storybook-amp?color=green&label=npm&style=flat-square)](https://www.npmjs.com/package/storybook-amp)
+# Storybook AMP Html &middot; [![npm package](https://img.shields.io/npm/v/storybook-amp?color=green&label=npm&style=flat-square)](https://www.npmjs.com/package/storybook-amp)
 
 Storybook addon for [AMP (Accelerated Mobile Pages)](https://amp.dev/). Allows to display in your stories *AMP Html* components generated with React.
 
 ![Screenshot](screenshot.png)
+
+<details open="open">
+<summary>Table of Contents</summary>
+
+- [Features](#features)
+- [Demo](#demo)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+  - [Usage](#usage)
+  - [Examples](#examples)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+- [Links](#links)
+
+</details>
+
+<br />
 
 ## Features
 
@@ -14,19 +34,20 @@ Storybook addon for [AMP (Accelerated Mobile Pages)](https://amp.dev/). Allows t
 
 ## Demo
 
-<a href="https://demo.onwidget.com/storybook-amp/" target="_blank">demo.onwidget.com/storybook-amp/</a>
+- [Storybook AMP Html Demo](https://demo.onwidget.com/storybook-amp/)
 
 <br />
 
-## Installation
+## Getting Started
+
+### Installation
 
 ```sh
 npm install -D storybook-amp
 ```
 
-<br />
 
-## Configuration
+### Configuration
 
 Next, update `.storybook/main.js` to the following:
 
@@ -45,9 +66,8 @@ module.exports = {
 };
 ```
 
-<br />
 
-## Usage
+### Usage
 
 To set custom settings, use the  `amp` parameter. 
 
@@ -93,42 +113,39 @@ export const Story = (args) => (
 )
 ```
 
-For more examples and configurations go to the [Demo](#demo)
+### Examples
+
+- [React](https://github.com/onwidget/storybook-amp/tree/main/example)
   
 <br />
 
-### Tested Addons Compatibility
+## Roadmap
 
-<ul>
-  <li>
-    Addon Viewport
-  </li>
-  <li>
-    Addon Controls
-  </li>
-  <li>
-    Addon Backgrounds
-  </li>
-  <li>
-    Addon Storysource
-  </li>
-  <li>
-    Addon Docs (Coming soon)
-  </li>
-  <li>
-    Addon Toolbars (Coming soon)
-  </li>
-  <li>
-    Addon Accessibility (Coming soon)
-  </li>
-  <li>
-    Addon Chromatic (Coming soon)
-  </li>
-</ul>
+- Make it compatible with the *Chromatic addon*
+- Make it compatible with the *Accessibility addon*
+- Adjust UI details when used with *Docs addon*
+- More tools for *AMP Ads* and *AMP Email*
+- Add more example tests
+- Add tests
+- Make CI integration possible
 
 <br />
 
-## AMP Documentation
+## Contributing
+
+Storybook AMP Html addon is an open-source project. We are committed to a fully transparent development process and appreciate highly any contributions. Whether you are helping us fix bugs, proposing new features, improving our documentation or spreading the word - we would love to have you as part of the community.
+
+Please refer to our [Contribution Guidelines](https://github.com/onwidget/storybook-amp/blob/main/CONTRIBUTING.md) and [Code of Conduct](https://github.com/onwidget/storybook-amp/blob/main/CODE_OF_CONDUCT.md).
+
+## License
+
+The Storybook AMP Html addon is licensed under the MIT license — see the [LICENSE](https://github.com/onwidget/storybook-amp/blob/main/LICENSE) file for details.
+
+## Acknowledgements
+
+Initially created by [onWidget](https://onwidget.com) and maintained by a community of [contributors](https://github.com/onwidget/storybook-amp/graphs/contributors).
+
+## Links
 
 - [AMP Project](https://amp.dev/)
 - [Awesome Amp](https://github.com/onwidget/awesome-amp)

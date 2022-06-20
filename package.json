@@ -83,7 +83,7 @@
     "node": ">=14"
   },
   "storybook": {
-    "displayName": "Storybook AMP",
+    "displayName": "Storybook AMP Html",
     "unsupportedFrameworks": [],
     "supportedFrameworks": [
       "react"
