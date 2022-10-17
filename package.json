@@ -47,7 +47,8 @@
     "@storybook/addons": "^6.0.0",
     "@storybook/components": "^6.0.0",
     "@storybook/core-events": "^6.0.0",
-    "@emotion/styled": "11.10.4",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "global": "^4.4.0"
   },
   "devDependencies": {
