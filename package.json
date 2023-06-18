@@ -44,14 +44,6 @@
     "build-storybook": "sb build -c ./example/.storybook -s example/public"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@storybook/addons": "^6.0.0",
-    "@storybook/components": "^6.0.0",
-    "@storybook/core-events": "^6.0.0",
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
-=======
->>>>>>> b48c8d5 (Update to storybook v7)
     "global": "^4.4.0"
   },
   "devDependencies": {
