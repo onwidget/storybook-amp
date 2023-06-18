@@ -1,4 +1,8 @@
 module.exports = {
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {},
+  },
   stories: [
     "../stories/docs/*.stories.(js|mdx)",
     "../stories/components/websites/*.stories.(js|mdx)",
@@ -16,11 +20,6 @@ module.exports = {
     "@storybook/addon-viewport",
     {
       name: "@storybook/addon-docs",
-      options: {
-        sourceLoaderOptions: {
-          injectStoryParameters: false,
-        },
-      },
     },
     "@storybook/addon-controls",
     "@storybook/addon-backgrounds",

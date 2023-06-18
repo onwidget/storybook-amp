@@ -12,10 +12,6 @@ import getBase64ForAMPValidator from "../utils/getBase64ForAMPValidator";
 import getHtmlFormatForType from "../utils/getHtmlFormatForType"
 import getAmpLabelForType from "../utils/getAmpLabelForType"
 
-const ValidateButton = styled(Button)(({ theme }) => ({
-  background: theme.barBg,
-}));
-
 const Tooltip = ({ onHide }) => (
   <TooltipMessage
     title="Use Online Validator"
@@ -53,14 +49,15 @@ export const PanelContent = ({ data }) => {
           {/* <Badge status="positive" style={{ marginRight: 8}}>PASS</Badge> */}
           {html && (
             <WithTooltip placement="auto" trigger="hover" tooltip={<Tooltip />}>
-              <ValidateButton
+              <Button
                 small
                 outline
                 type="button"
                 onClick={(e) => handleValidate(e)}
+                // style={{ backgroundColor: theme.barBg }}
               >
                 Validate
-              </ValidateButton>
+              </Button>
             </WithTooltip>
           )}
         </div>

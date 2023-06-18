@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 
-import addonAPI, { makeDecorator } from "@storybook/addons";
+import { addons as addonAPI, makeDecorator } from "@storybook/addons";
 
 import { getTemplateFn } from "./templates";
 import getBlodURL from "./utils/getBlodURL";
@@ -50,7 +50,7 @@ const getAmpHTML = (
 };
 /* *************** */
 
-const decorator = (storyFn, context = {}, { parameters }) => {
+const decorator = (storyFn, context = {}, { parameters = {} }) => {
   const { title } = context;
 
   const {
